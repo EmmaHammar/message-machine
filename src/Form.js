@@ -15,7 +15,6 @@ class Form extends React.Component {
         //skriver över state med nya statet:
         this.setState( {
             [evt.target.name]: evt.target.value
-            // inputTitle: evt.target.value
         } );
     }
    
@@ -23,16 +22,14 @@ class Form extends React.Component {
     onSubmit = (evt) => {
         evt.preventDefault();
 
-        // console.log("klick sendBtn");
-
+        // console.log("evt.target: ", evt.target);
+        // console.log("this.props: ", this.props);
+        // console.log("this.state: ", this.state);
+        
         //skickar tillbaka nya statet till App.js:
         this.props.getNewTitle(this.state.inputTitle);
-
         this.props.getNewName(this.state.inputName);
-        
-
-
-
+        this.props.getNewMsg(this.state.textAreaMsg);
     }
 
 

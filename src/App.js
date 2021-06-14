@@ -10,19 +10,20 @@ class App extends React.Component {
   }
 
   //lifecycle-metoden som reagerar på callbackfunktionen getNewTitle i Form.js:
-  saveNewTitle = (getTitle) => {
-    // console.log("callback i App.js");
 
+  saveNewTitle = (getTitle) => {
     //spara nya statet i App.js:
     this.setState( {inputTitle: getTitle} ) 
   }
 
-
   saveNewName = (getName) => {
-    // console.log("callback i App.js");
-
     //spara nya statet i App.js:
     this.setState( {inputName: getName} ) 
+  }
+
+  saveNewMsg = (getNewMsg) => {
+    //spara nya statet i App.js:
+    this.setState( {textAreaMsg: getNewMsg} ) 
   }
 
 
@@ -32,17 +33,22 @@ class App extends React.Component {
         <h1>Message Machine</h1>
         <div id="contentWrapper">
           <Form 
-          inputTitle={this.state.inputTitle} 
-          getNewTitle={this.saveNewTitle}
+            inputTitle={this.state.inputTitle} 
+            getNewTitle={this.saveNewTitle}
 
-          inputName={this.state.inputName}
-          getNewName={this.saveNewName}
-          
-          textAreaMsg={this.state.textAreaMsg}
+            inputName={this.state.inputName}
+            getNewName={this.saveNewName}
 
-
+            textAreaMsg={this.state.textAreaMsg}
+            getNewMsg={this.saveNewMsg}
           />
-          <Message showTitle={this.state.inputTitle} />
+
+          <Message 
+            showTitle={this.state.inputTitle} 
+            showName={this.state.inputName}
+            showMsg ={this.state.textAreaMsg}
+          />
+
         </div>
       </>
     )
