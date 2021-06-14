@@ -15,14 +15,12 @@ class App extends React.Component {
     this.setState( {inputTitle: getTitle} ) 
   }
 
-
-
   render() {
     return(
       <>
         <h1>Message Machine</h1>
         <div id="contentWrapper">
-          <Form id="formContainer" inputTitle={this.state.inputTitle} getNewTitle={this.saveNewTitle}/>
+          <Form inputTitle={this.state.inputTitle} getNewTitle={this.saveNewTitle}/>
           <Message showTitle={this.state.inputTitle} />
         </div>
       </>
