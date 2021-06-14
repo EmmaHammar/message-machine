@@ -11,3 +11,19 @@ Den vänstra delen utav sidan innehåller ett formulär med input fält för rub
 Den högra delen utav sidan skall reflektera det som fyllts i formuläret fast med svart bakgrund och vit text.
 
 Du skall använda minst 3 komponenter. En parent förslagsvis App.js med två child komponenter Form.js (vänster) och Message.js (höger).
+
+
+# Frågor:
+
+===
+I App.js hur gör jag för att det ska bli mer dynamiskt så jag kan återanvända funktioner o även i <Form/> samt <Message/>?
+===
+
+I Form.js i onSubmit = (evt) => {} - Hur gör jag för att skicka det mer dynamiskt? 
+===
+Hur skiljer sig detta från didMount osv? didMount är en annan lifecyclemetod? I detta fall har jag valt onChange o onSubmit som lifecyclemetoder?
+===
+Om jag i Message.js skriver: 
+ <h3>To: {this.props.showName}</h3> blir det i DOMen <h3>"To:" "emma"</h3> - varför?
+===
+Om jag vill att To ska komma först efter klick på send-btn - hur gör jag då?

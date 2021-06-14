@@ -6,7 +6,7 @@ class Message extends React.Component {
             <div id="formResult">
 
                 <h2>{this.props.showTitle}</h2>
-                <h3> To: {this.props.showName}</h3>
+                <h3>{this.props.showName}</h3>
                 <p>{this.props.showMsg}</p>
 
             </div>
