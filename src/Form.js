@@ -18,7 +18,7 @@ class Form extends React.Component {
             // inputTitle: evt.target.value
         } );
     }
-
+   
     //för formuläret:
     onSubmit = (evt) => {
         evt.preventDefault();
@@ -27,6 +27,10 @@ class Form extends React.Component {
 
         //skickar tillbaka nya statet till App.js:
         this.props.getNewTitle(this.state.inputTitle);
+
+        this.props.getNewName(this.state.inputName);
+        
+
 
 
     }

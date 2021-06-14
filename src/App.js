@@ -17,6 +17,15 @@ class App extends React.Component {
     this.setState( {inputTitle: getTitle} ) 
   }
 
+
+  saveNewName = (getName) => {
+    // console.log("callback i App.js");
+
+    //spara nya statet i App.js:
+    this.setState( {inputName: getName} ) 
+  }
+
+
   render() {
     return(
       <>
@@ -27,6 +36,8 @@ class App extends React.Component {
           getNewTitle={this.saveNewTitle}
 
           inputName={this.state.inputName}
+          getNewName={this.saveNewName}
+          
           textAreaMsg={this.state.textAreaMsg}
 
 
