@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: wheat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+#contentWrapper {
+  display: flex;  
+}
+
+#formMsg, #formResult {
+  width: 50vw;
+  height: 80vh;
+}
+
+#formMsg {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 40vw;  
+}
+
+#formResult {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+#inputTitle, #inputName, #textAreaMsg, #submitBtn {
+  margin: 10px;
+  min-height: 20px;
+}
+
+#textAreaMsg {
+  min-height: 20vh;
+}
+
+
+.btn {
+  max-width: 20vw;
 }
