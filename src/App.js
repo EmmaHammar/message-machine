@@ -5,6 +5,8 @@ import Message from "./Message";
 class App extends React.Component {
   state = {
     inputTitle: "",
+    inputName: "",
+    textAreaMsg: "",
   }
 
   //lifecycle-metoden som reagerar på callbackfunktionen getNewTitle i Form.js:
@@ -20,7 +22,15 @@ class App extends React.Component {
       <>
         <h1>Message Machine</h1>
         <div id="contentWrapper">
-          <Form inputTitle={this.state.inputTitle} getNewTitle={this.saveNewTitle}/>
+          <Form 
+          inputTitle={this.state.inputTitle} 
+          getNewTitle={this.saveNewTitle}
+
+          inputName={this.state.inputName}
+          textAreaMsg={this.state.textAreaMsg}
+
+
+          />
           <Message showTitle={this.state.inputTitle} />
         </div>
       </>

@@ -4,6 +4,8 @@ class Form extends React.Component {
 
     state = {
         inputTitle: this.props.inputTitle,
+        inputName: this.props.inputName,
+        textAreaMsg: this.props.textAreaMsg,
     }
 
     //för varje input/textarea-fält:
@@ -11,7 +13,10 @@ class Form extends React.Component {
         console.log("Upptäckte en ändring");
 
         //skriver över state med nya statet:
-        this.setState( {inputTitle: evt.target.value} );
+        this.setState( {
+            [evt.target.name]: evt.target.value
+            // inputTitle: evt.target.value
+        } );
     }
 
     //för formuläret:
@@ -30,9 +35,9 @@ class Form extends React.Component {
     render() {
         return(
             <form id="formMsg" onSubmit={this.onSubmit}>
-                <input id="inputTitle" type="text" placeholder="Title" value={this.state.inputTitle} onChange={this.onChange}/> 
-                <input id="inputName" type="text" placeholder="Name" />
-                <textarea id="textAreaMsg" type="text" placeholder="Write your message here..."></textarea>
+                <input id="inputTitle" type="text" name="inputTitle" placeholder="Title" value={this.state.inputTitle} onChange={this.onChange}/> 
+                <input id="inputName" type="text" name="inputName" placeholder="Name" value={this.state.inputName} onChange={this.onChange}/>
+                <textarea id="textAreaMsg" type="text" name="textAreaMsg" placeholder="Write your message here..." value={this.state.textAreaMsg} onChange={this.onChange}></textarea>
                 <button id="submitBtn" className="btn" type="submit">Send</button>
             </form>
         ) 
