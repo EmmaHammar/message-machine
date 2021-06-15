@@ -4,28 +4,12 @@ import Message from "./Message";
 
 class App extends React.Component {
   state = {
-    inputTitle: "",
-    inputName: "",
-    textAreaMsg: "",
+    title: "",
+    receiver: "",
+    msg: "",
   }
 
-  //lifecycle-metoden som reagerar på callbackfunktionen getNewTitle i Form.js:
-
-  saveNewTitle = (getTitle) => {
-    //spara nya statet i App.js:
-    this.setState( {inputTitle: getTitle} ) 
-  }
-
-  saveNewName = (getName) => {
-    //spara nya statet i App.js:
-    this.setState( {inputName: getName} ) 
-  }
-
-  saveNewMsg = (getNewMsg) => {
-    //spara nya statet i App.js:
-    this.setState( {textAreaMsg: getNewMsg} ) 
-  }
-
+  //lifecycle-metoden som reagerar på callbackfunktionen getNewForm i Form.js:
   saveForm = (myTitle, myReceiver, myMsg) => {
     this.setState ({
       title: myTitle,
@@ -40,20 +24,26 @@ class App extends React.Component {
         <h1>Message Machine</h1>
         <div id="contentWrapper">
           <Form 
-            inputTitle={this.state.inputTitle} 
+            title={this.state.title} 
             getNewTitle={this.saveNewTitle}
 
-            inputName={this.state.inputName}
+            receiver={this.state.receiver}
             getNewName={this.saveNewName}
 
-            textAreaMsg={this.state.textAreaMsg}
+            msg={this.state.msg}
             getNewMsg={this.saveNewMsg}
+
+            //FRÅGA: är det såhär det går till?
+            //getNewForm är callback till getNewForm i Form.js? 
+            //1) kallar på getNewForm i App.js som körs
+            // kallar på saveForm i App.js som körs
+            getNewForm={this.saveForm}
           />
 
           <Message 
-            showTitle={this.state.inputTitle} 
-            showName={this.state.inputName}
-            showMsg ={this.state.textAreaMsg}
+            showTitle={this.state.title} 
+            showName={this.state.receiver}
+            showMsg ={this.state.msg}
           />
 
         </div>
@@ -63,9 +53,4 @@ class App extends React.Component {
 
 }
 
-
 export default App;
-
-
-//state:     inputName: "Write receiver's name", 
-    // textAreaMsg: "WriteYourMessage",

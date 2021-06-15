@@ -23,13 +23,8 @@ class Form extends React.Component {
         evt.preventDefault();
 
         //skickar tillbaka nya statet till App.js:
-        this.props.getNewTitle(this.state.inputTitle);
-        this.props.getNewName(this.state.inputName);
-        this.props.getNewMsg(this.state.textAreaMsg);
-
         this.props.getNewForm(this.state.inputTitle, this.state.inputName, this.state.textAreaMsg)
     }
-
 
     render() {
         return(
@@ -41,7 +36,6 @@ class Form extends React.Component {
             </form>
         ) 
     }
-
 }
 
 export default Form;
