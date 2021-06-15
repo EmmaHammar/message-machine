@@ -26,6 +26,9 @@ class App extends React.Component {
     this.setState( {textAreaMsg: getNewMsg} ) 
   }
 
+  saveForm = (title, receiver, msg) => {
+    this.setState ( {} )
+  }
 
   render() {
     return(
