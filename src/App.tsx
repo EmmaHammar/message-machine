@@ -2,7 +2,13 @@ import React from "react";
 import Form from "./Form";
 import Message from "./Message";
 
-class App extends React.Component {
+interface State {
+  title: string | null,
+  receiver: string | null,
+  msg: string | null,
+}
+
+class App extends React.Component<State> {
   state = {
     title: "",
     receiver: "",
@@ -10,7 +16,7 @@ class App extends React.Component {
   }
 
   //lifecycle-metoden som reagerar på callbackfunktionen getNewForm i Form.js:
-  saveForm = (myTitle, myReceiver, myMsg) => {
+  saveForm = (myTitle: string, myReceiver: string, myMsg: string) => {
     this.setState ({
       title: myTitle,
       receiver: myReceiver,
@@ -25,13 +31,13 @@ class App extends React.Component {
         <div id="contentWrapper">
           <Form 
             title={this.state.title} 
-            getNewTitle={this.saveNewTitle}
+            // getNewTitle={this.saveNewTitle}
 
             receiver={this.state.receiver}
-            getNewName={this.saveNewName}
+            // getNewName={this.saveNewName}
 
             msg={this.state.msg}
-            getNewMsg={this.saveNewMsg}
+            // getNewMsg={this.saveNewMsg}
 
             //FRÅGA: är det såhär det går till?
             //getNewForm är callback till getNewForm i Form.js? 
@@ -41,9 +47,9 @@ class App extends React.Component {
           />
 
           <Message 
-            showTitle={this.state.title} 
-            showName={this.state.receiver}
-            showMsg ={this.state.msg}
+            title={this.state.title} 
+            receiver={this.state.receiver}
+            msg ={this.state.msg}
           />
 
         </div>

@@ -5,9 +5,9 @@ class Message extends React.Component {
         return(
             <div id="formResult">
 
-                <h2>{this.props.showTitle}</h2>
-                <h3>{this.props.showName}</h3>
-                <p>{this.props.showMsg}</p>
+                <h2>{this.props.title}</h2>
+                <h3>{this.props.receiver}</h3>
+                <p>{this.props.msg}</p>
 
             </div>
         )
